@@ -7,7 +7,6 @@ public class LoopPrompt {
 			System.out.print("\n\tWould you like to run the program again? (y/n): ");
 			awn = Character.toUpperCase(inp.next().charAt(0));
 		} while (!valid(awn));
-		inp.nextLine();
 		inp.close();
 		return awn;
 	}
