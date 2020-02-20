@@ -7,7 +7,12 @@ public class LoopPrompt {
 			System.out.print("\n\tWould you like to run the program again? (y/n): ");
 			awn = Character.toUpperCase(inp.next().charAt(0));
 		} while (!valid(awn));
-		inp.close();
+		
+		/*
+		 * || Dont close the scanner. At least, not this way.
+		 * \/ this closes all the scanner stuff for some reason and crashes the loop. 
+		 */
+		//inp.close();
 		return awn;
 	}
 
