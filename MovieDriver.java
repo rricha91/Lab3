@@ -2,14 +2,17 @@ import java.util.Scanner;
 public class MovieDriver {
 
 	public static void main(String[] args) {
-		//	Create a new object of type Scanner that reads from the keyboard
+		// Create a new object of type Scanner that reads from the keyboard
 		Scanner in = new Scanner(System.in);
 		
-		//Create a new movie object
+		// Create a new movie object
 		Movie movie = new Movie();
+		
 		LoopPrompt loop = new LoopPrompt();
+		
+		
+		
 		do {
-			do {
 			//Prompt the user to enter the title of a movie 
 			System.out.print("\n\tPlease enter the name of a movie: ");
 			
@@ -40,10 +43,9 @@ public class MovieDriver {
 			
 			// Print out the information using the movie’s toString method
 			System.out.print("\n\t" + movie.toString());
-		} while (loop.prompt()==89);
+		} while (loop.prompt(in)==89);
 		
 			in.close();
 
 	}
-
 }
