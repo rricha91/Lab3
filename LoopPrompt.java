@@ -1,18 +1,25 @@
 import java.util.Scanner;
 public class LoopPrompt {
-	public char prompt(){
+	
+	//Put scanner in prefix so it still closes
+	public char prompt(Scanner in){
 		char awn;
-		Scanner inp = new Scanner(System.in);
+		
 		do {
 			System.out.print("\n\tWould you like to run the program again? (y/n): ");
-			awn = Character.toUpperCase(inp.next().charAt(0));
+			awn = Character.toUpperCase(in.next().charAt(0));
 		} while (!valid(awn));
 		
 		/*
-		 * || Dont close the scanner. At least, not this way.
-		 * \/ this closes all the scanner stuff for some reason and crashes the loop. 
+		 * || Original created scanner in the file and closed it at the end. 
+		 * || 		Didn't work. 
+		 * || 
+		 * || If an original Scanner is made in the prompt, do not close it.
+		 * \/ 		This closes all the scanner stuff for some reason and crashes the loop. 
 		 */
 		//inp.close();
+		
+		in.nextLine();
 		return awn;
 	}
 
